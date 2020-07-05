@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Circle</title>
+
+	<style type="text/css">
+		
+		body,h1,h2,h3,h4,h5 {font-family: sans-serif;}
+
+		html, body{
+			line-height:1.5;
+			font-size: 15px;
+		}
+
+		html{
+			overflow-x: hidden;
+		}
+
+		.testBorder{
+			border: solid 2px;
+			padding: 10px;
+		}
+
+		.lightgrey{
+			color:#000!important;
+			background-color:#f1f1f1!important;
+		}
+
+		.cardContainer{
+			background-color: rgba(255, 255, 255, 0.8);
+			font-size: 26px;
+			text-align: center;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			border: none;
+			margin: 25px 10px;
+			border-radius: 10px;
+		}
+
+		.gridContainer{
+			display: grid;
+			position: absolute;
+			grid-template-columns: 70% 30%;
+			grid-column-gap: 15px;
+			grid-row-gap: 20px;
+			padding: 10px 20px;
+			margin: 150px 0px;
+			justify-content: center;
+			align-content: center;
+			width: 93%;
+
+		}
+
+		.column1{
+			grid-column: 1 / 2;
+			display: block;
+			float: left;
+		}
+
+		.column2{
+			grid-column: 2 / 3;
+			width: 90%;
+			display: block;
+		}
+
+		.row1{
+			grid-row: 1 / 2;
+			width: 98%;
+			position: absolute;
+		}
+
+		.row2{
+			grid-row: 2 / 3;
+			width: 98%;
+		}
+
+		.footer{
+			grid-row: 2 / 3;
+			position: absolute;
+			color: #fff!important;
+			background-color: #616161!important;
+			padding: 32px 0px;
+			font-size: 16px;
+			padding: 20px;
+			bottom: 0px;
+
+		}
+
+		.mainGrid{
+			display: grid;
+			grid-template-rows: 80% 20%;
+		}
+
+		.BlogHeading{
+			font-size: 40px;
+			padding: 10px;
+			margin: 50px 15px;
+			text-align: center;
+			font-family: Times New Roman;
+			font-weight: bolder;
+			line-height: 1em;
+			letter-spacing: 0.1em;
+
+		}
+
+		.BlogSubHeading{
+			font-family: Arial;
+			font-size: 16px;
+			opacity: 0.6;
+			font-weight: lighter;
+			font-style: italic;
+			line-height: 0.5em;
+			letter-spacing: 0.2em;
+		}
+
+
+		.Heading{
+			margin-top: 5px;
+			font-size: 22px;
+			font-weight: bold;
+			line-height: 1em;
+			letter-spacing: 0.1em;
+			text-align: left;
+			font-family: Arial;
+			float: left;
+		}
+
+		.SubHeading{
+			font-size: 16px;
+			opacity: 0.5;
+			font-style: italic;
+			text-align: left;
+			font-family: Arial;
+			float: left;
+		}
+
+		.Highlight{
+			background-color: black !important;
+    		color: white;
+		    padding-left: 8px;
+		    padding-right: 8px;
+		    text-align: center;
+		}
+
+
+		.buttons{
+			border: solid 1px rgba(97, 97, 97, 0.5);
+			padding: 12px 24px;
+			margin-left: 5px;
+			margin-top: 15px;
+			font-size: 16px;
+			background-color: white;
+			font-weight: bold;
+		}
+
+
+		.buttons:hover{
+			background-color: rgba(97, 97, 97, 0.2);
+			transition-duration: 0.4s;
+		}
+
+		.PostImage{
+			width: 100%;
+			height: 350px;
+			border-radius: 10px 10px 0px 0px;
+		}
+
+		.PostBody{
+			word-wrap: break-word;
+			text-align: left;
+		}
+
+		.PostText{
+			font-size: 16px;
+			font-family: Arial;
+			font-weight: lighter;
+			text-align: left;
+			color: black;
+		}
+
+		.LikesCounter{
+			background-color: black;
+			color: white;
+			padding: 10px;
+			margin-top: 15px;
+			font-size: 16px;
+			border-radius: 360px;
+			float: right;
+			margin-left: 10px;
+		}
+
+		.avatarImage{
+			width: 100%;
+			border-radius: 10px;
+			/*height: 250px;*/
+		}
+
+		.Padding1{
+			padding: 25px 50px;
+		}
+
+		.Padding2{
+			padding: 15px 25px;
+		}
+
+/*
+		ul{
+			list-style: none;
+			text-align: left;
+			padding-left: 0px;
+			background: rgb(207, 207, 207);
+			text-align: center;
+			margin: 10px 0px;
+			padding: 20px 0px;
+			padding-bottom: 0px;
+			font-weight: lighter;
+			font-size: 20px;
+		}
+
+		ul li{
+			border: solid 0.2px rgb(224, 224, 224);
+			padding: 5px 10px;
+			background-color: white;
+			text-align: left;
+			padding: 20px;
+			font-size: 16px;
+		}
+
+		ul li:hover{
+			background-color: rgb(224, 224, 224);
+		}
+*/
+		hr{
+			border: solid 2px rgb(207, 207, 207);
+			border-radius: 10px;
+			width: 100%;
+			margin-top: 30px;
+			margin-bottom: 10px;
+		}
+
+
+	</style>
+
+
+
+</head>
+<body class="lightgrey" >
+	<div class="mainGrid">
+	<div class="BlogHeading">
+		My Blog <br />
+		<span class="BlogSubHeading"> 
+			Welcome to the blog of <span class="Highlight">Unknown</span><br />
+		</span>
+	</div>
+	<!-- Main Container Block -->
+		<div class="gridContainer row1">
+			<!-- Grid begins -->
+			<div class="column1">
+				<!-- Column1 Begins -->
+				<div class="cardContainer">
+					<img src="scenery.jpg" class="PostImage" />
+					<div class="PostBody Padding1">
+						<div>
+							<div class="Heading">TITLE HEADING</div> <br />
+							<div class="SubHeading">Title description, April 7, 2014</div> <br />
+							<hr />
+							<div class="PostText">
+								Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
+							</div>
+							<button class="buttons">Read More &#12299;</button>
+							<span class="LikesCounter">0</span><button class="buttons" style="float: right;">Like</button>
+						</div>
+					</div> 
+				</div>
+
+				<div class="cardContainer">
+					<img src="scenery1.jpg" class="PostImage" />
+					<div class="PostBody Padding1">
+						<div>
+							<div class="Heading">TITLE HEADING</div> <br />
+							<div class="SubHeading">Title description, April 7, 2014</div> <br />
+							<hr />
+							<div class="PostText">
+								Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
+							</div>
+							<button class="buttons">Read More &#12299;</button>
+							<span class="LikesCounter">0</span><button class="buttons" style="float: right;">Like</button>
+						</div>
+					</div> 
+				<!-- Column1 Ends -->
+			</div>
+		</div>
+		
+		<div class="column2">
+			<!-- Column2 Begins -->
+			<div class="cardContainer">
+				<img src="avatar1.jpeg" class="avatarImage" />
+				<div class="Padding2">
+					<div class="Heading">My Name</div> <br />
+					<hr />
+					<div class="PostText">
+						Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.
+					</div>
+					
+				</div>
+			</div>
+<!-- 			<div class="cardContainer lightgrey">
+				<ul>
+					Popular Post
+					<li>
+						<img src="scenery.jpg" style="width: 50px; height: 50px;">
+						<span>Lorem</span><br />
+						<span>Sed mattis nunc</span>
+					</li>
+					<li>
+						<img src="scenery1.jpg" style="width: 50px; height: 50px;">
+						<span>Ipsum</span><br />
+						<span>Praes tinci sed</span>
+					</li>
+					<li>
+						<img src="scenery.jpg" style="width: 50px; height: 50px;">
+						<span>Dorum</span><br />
+						<span>Ultricies congue</span>
+					</li>
+					<li>
+						<img src="scenery1.jpg" style="width: 50px; height: 50px;">
+						<span>Mingsum</span><br />
+						<span>Lorem ipsum dipsum</span>
+					</li>
+				</ul>
+			</div> -->
+			<!-- Column2 Ends -->
+		</div>
+			<!-- <div class="column1 testBorder">Column1</div>
+			<div class="column2 testBorder">Column2</div> -->
+			
+			<!-- Grid Ends -->
+		</div>
+
+<!-- 		<div class="footer row2">
+			<h1>Footer</h1>
+		</div> -->
+		<!-- Main container ends -->
+	</div>
+
+
+
+</body>
+</html>

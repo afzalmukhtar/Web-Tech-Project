@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <link rel="stylesheet" type="text/css" href="Textbox.css" /> -->
+	<title>textbox</title>
+	</script>
+	<script type="text/javascript">
+		window.addEventListener("load", function(){
+			var editor = Editor.document;
+			editor.designMode = "on";
+			Bold.addEventListener("click", function () {
+				editor.execCommand("Bold", false, null);
+			})
+
+			Italics.addEventListener("click", function () {
+				editor.execCommand("Italic", false, null);
+			})
+
+			Supscript.addEventListener("click", function () {
+				editor.execCommand("Superscript", false, null);
+			})
+			
+			
+			Subscript.addEventListener("click", function () {
+				editor.execCommand("Subscript", false, null);
+			})
+			
+			Underline.addEventListener("click", function () {
+				editor.execCommand("Underline", false, null);
+			})
+			
+			OrderedList.addEventListener("click", function () {
+				editor.execCommand("InsertOrderedList", false, "newOl" + Math.round(Math.random()));
+			})
+			
+			UnorderedList.addEventListener("click", function () {
+				editor.execCommand("InsertUnorderedList", false, "newUl" + Math.round(Math.random()));
+			})
+			
+			Highlight.addEventListener("click", function(event){
+				editor.execCommand("BackColor", false, event.Color = "rgba(251, 255, 0, 0.6)")
+			})
+
+			FontFamily.addEventListener("change", function (event) {
+				editor.execCommand("FontName", false, event.target.value);
+			})
+
+			FontSize.addEventListener("change", function (event) {
+				editor.execCommand("FontSize", false, event.target.value);
+			})
+
+			LeftAlign.addEventListener("click", function (event) {
+				editor.execCommand("JustifyLeft", false, "");
+			})
+
+			RightAlign.addEventListener("click", function (event) {
+				editor.execCommand("JustifyRight", false, "");
+			})			
+
+			CenterAlign.addEventListener("click", function (event) {
+				editor.execCommand("JustifyCenter", false, "");
+			})
+
+		}, false);
+
+
+	</script>
+	<!-- <script type="text/javascript">
+	// // Get the container element
+	// var btnContainer = document.getElementById("FormattingToolbar");
+	// // Get all buttons with class="btn" inside the container
+	// var btns = btnContainer.getElementsByTagName('buttons');
+
+	// // Loop through the buttons and add the active class to the current/clicked button
+	// for (var i = 0; i < btns.length; i++) {
+	// 	btns[i].addEventListener("click", function() {
+	// 		var current = document.getElementsByClassName("active");
+	// 		// If there's no active class
+	// 		if (current.length > 0) {
+	// 			current[0].className = current[0].className.replace(" active", "");
+	// 		}
+	// 	    // Add the active class to the current/clicked button
+	// 	    this.className += " active";
+	// 	});
+	// }
+	</script> -->
+	<style type="text/css">
+		html{ scroll-behavior: smooth; }
+		div#Frame {
+			height: 350px;
+			min-width: 100px;
+			max-width: 750px;
+			margin: 15px auto 15px auto;
+			/*overflow-y: auto;	*/
+			/*resize: vertical;*/
+			/*border-style: double;*/
+			margin-top: 15px;
+			padding: 5px;
+		}
+
+
+
+		div#FormattingToolbar {
+			text-align: center;
+			margin: 10px auto 10px auto;
+			padding: 5px;
+			border: 3px line;
+			background-color: #034957;
+			border-radius: 80px 50px;
+		}
+
+/*		@media screen and (max-width: 750px) {
+			div#Frame {
+				max-height: 1000px;
+			}
+		}*/
+
+		.buttons {
+			font-family: Georgia;
+			background-color: #034957;
+			color: white;
+			border: none;
+			padding: 5px 10px;
+			text-align: center;
+			font-size: 14px;
+			cursor: pointer;
+			display: inline-block;
+			border-radius: 250px;
+		}
+		.active, .buttons:hover {
+			background-color: white;
+		  	/*background-color: #09677a;*/
+		  	color: black;
+		  	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			transition-duration: 0.4s;
+		}
+
+		.DDlist {
+			border: none;
+			border-radius: 10px;
+			font-family: Times New Roman;
+			padding: 5px 10px;
+			margin-top: 6px;
+			margin-bottom: 12px;
+			scroll-behavior: smooth;
+		}
+		.DDlist:hover {
+			border: none;
+			/*border-radius: 20px;*/
+			cursor: pointer;
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			transition-duration: 0.4s;
+		}
+
+		iframe#Editor{
+			height: 100%;
+			width: 99%;
+			border-style: double;
+			resize: vertical;
+			overflow: visible;
+		}
+
+		#Foot{
+			background-color: #034957;
+			border-radius: 80px 50px;
+			/*position: absolute*/;
+
+		}
+
+		.FinaliseButton {
+			font-family: Georgia;
+			background-color: #034957;
+			color: white;
+			border: none;
+			margin-left: 10px;
+			padding: 5px 10px 5px 10px;
+			text-align: center;
+			font-size: 14px;
+			cursor: pointer;
+			
+			float: right;
+			margin-right: 10px;
+			border-radius: 250px;
+		}
+
+		.FinaliseButton:hover {
+			border: none;
+			/*border-radius: 20px;*/
+			cursor: pointer;
+			background-color: white;
+			color: black;
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			transition-duration: 0.4s;
+		}
+
+
+		/* For mobile phones: */
+		[class*="col-"] {
+			width: 100%;
+		}
+
+		/*@media only screen and (min-width: 600px) {*/
+			/* For tablets: */
+		  /*	.col-s-1 {width: 8.33%;}
+		  	.col-s-2 {width: 16.66%;}
+		  	.col-s-3 {width: 25%;}
+		  	.col-s-4 {width: 33.33%;}
+		  	.col-s-5 {width: 41.66%;}
+		  	.col-s-6 {width: 50%;}
+		  	.col-s-7 {width: 58.33%;}
+		  	.col-s-8 {width: 66.66%;}
+		  	.col-s-9 {width: 75%;}
+		  	.col-s-10 {width: 83.33%;}
+		  	.col-s-11 {width: 91.66%;}
+		  	.col-s-12 {width: 100%;}
+		  }
+*/
+		/*@media only screen and (min-width: 768px) {*/
+			/* For desktop: */
+/*
+			.col-1 {width: 8.33%;}
+		  	.col-2 {width: 16.66%;}
+		  	.col-3 {width: 25%;}
+		  	.col-4 {width: 33.33%;}
+		  	.col-5 {width: 41.66%;}
+		  	.col-6 {width: 50%;}
+		  	.col-7 {width: 58.33%;}
+		  	.col-8 {width: 66.66%;}
+		  	.col-9 {width: 75%;}
+		  	.col-10 {width: 83.33%;}
+		  	.col-11 {width: 91.66%;}
+		  	.col-12 {width: 100%;}
+		}
+
+*/
+		.superscript { position: relative; top: -0.5em; font-size: 80%; }
+		.subscript { position: relative; bottom: -0.5em; font-size: 80%; }
+		#Arial {font-family: Arial;}
+		#ComicSansMS {font-family: Comic Sans MS;}
+		#CourierNew {font-family: Courier New;}
+		#TimesNewRoman {font-family: Times New Roman;}
+		#Veranda {font-family: Veranda;}
+		#Georgia {font-family: Georgia;}
+
+
+	</style>
+</head>
+<body>
+	<div id="Frame" class=".col-s-0 .col-s-1 .col-s-2 .col-s-3 .col-s-4 .col-s-5 .col-s-6 .col-s-7 .col-s-8 .col-s-9 .col-s-10 .col-s-11 .col-s-12">
+		<div id="FormattingToolbar">
+			<button id="Bold" name="Bold" class="buttons"><strong> B </strong></button> <!-- BOLD -->
+			<button id="Italics" name="Italics" class="buttons"><em> I </em></button> <!-- Italics -->
+			<button id="Underline" name="Underline" class="buttons"><u> U </u></button> <!-- Underline -->
+			<button id="LeftAlign" name="LeftAlign" class="buttons"> Left </button> <!-- LeftALign -->
+			<button id="CenterAlign" name="CenterAlign" class="buttons"> Center </button> <!-- CentreAlign -->
+			<button id="RightAlign" name="RightAlign" class="buttons"> Right </button> <!-- RightAlign -->
+			
+			<!-- FONT SIZE-->
+			<select id="FontSize" name="FontSize" class="DDlist">
+				<option value="11">--FontSize--</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="14">14</option>
+				<option value="16">16</option>
+				<option value="18">18</option>
+				<option value="20">20</option>
+				<option value="22">22</option>
+				<option value="24">24</option>
+				<option value="26">26</option>
+				<option value="28">28</option>
+				<option value="36">36</option>
+			</select>
+			
+			<!-- FONT FAMILY-->
+			<select id="FontFamily" name="FontFamily" class="DDlist">
+				<option value="Arial">--FontFamily--</option>
+				<option value="Arial" id="Arial">Arial</option>
+				<option value="Comic Sans MS" id="ComicSansMS">Comic Sans MS</option>
+				<option value="Courier New" id="CourierNew">Courier New</option>
+				<option value="Times New Roman" id="TimesNewRoman">Times New Roman</option>
+				<option value="Veranda" id="Veranda">Veranda</option>
+				<option value="Georgia" id="Georgia">Georgia</option>
+			</select>
+			
+			<br />
+			<button id="OrderedList" name="OrderedList" class="buttons"> OL <!-- OL image--> </button> 
+			<!-- Ordered List -->
+			<button id="UnorderedList" name="UnorderedList" class="buttons"> UL <!-- UL image--></button> 
+			<!-- Unordered List -->
+			<button id="Highlight" name="Highlight" class="buttons"> H <!-- Highlighter image--> </button> <!-- Highlighter -->
+			<button id="Subscript" name="Subscript" class="buttons"> X<span class="subscript">2</span></button> 
+			<!-- Subscript -->
+			<button id="Supscript" name="Supscript" class="buttons"> X<span class="superscript">2</span></button> 
+			<!-- Superscript -->
+		</div>
+
+
+		
+		<div id="TextArea">
+			<iframe id="Editor" name="Editor" frameborder="0"></iframe>
+		</div>
+		<div id="Foot">
+			<button id="Done" name="FinaliseButton" class="FinaliseButton">Done</button>
+			<button id="Cancel" name="FinaliseButton" class="FinaliseButton">Cancel</button>
+		</div>
+	</div>
+</body>
+</html>

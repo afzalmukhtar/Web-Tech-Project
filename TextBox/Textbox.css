@@ -1,0 +1,155 @@
+html{ scroll-behavior: smooth; }
+		div#Frame {
+			height: 350px;
+			min-width: 100px;
+			max-width: 750px;
+			margin: 15px auto 15px auto;
+			/*overflow-y: auto;	*/
+			/*resize: vertical;*/
+			/*border-style: double;*/
+			margin-top: 15px;
+			padding: 5px;
+		}
+
+
+
+		div#FormattingToolbar {
+			text-align: center;
+			margin: 10px auto 10px auto;
+			padding: 5px;
+			border: 3px line;
+			background-color: #034957;
+			border-radius: 80px 50px;
+		}
+
+/*		@media screen and (max-width: 750px) {
+			div#Frame {
+				max-height: 1000px;
+			}
+		}*/
+
+		.buttons {
+			font-family: Georgia;
+			background-color: #034957;
+			color: white;
+			border: none;
+			padding: 5px 10px;
+			text-align: center;
+			font-size: 14px;
+			cursor: pointer;
+			display: inline-block;
+			border-radius: 250px;
+		}
+		.active, .buttons:hover {
+			background-color: white;
+		  	/*background-color: #09677a;*/
+		  	color: black;
+		  	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			transition-duration: 0.4s;
+		}
+
+		.DDlist {
+			border: none;
+			border-radius: 10px;
+			font-family: Times New Roman;
+			padding: 5px 10px;
+			margin-top: 6px;
+			margin-bottom: 12px;
+			scroll-behavior: smooth;
+		}
+		.DDlist:hover {
+			border: none;
+			/*border-radius: 20px;*/
+			cursor: pointer;
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			transition-duration: 0.4s;
+		}
+
+		iframe#Editor{
+			height: 100%;
+			width: 99%;
+			border-style: double;
+			resize: vertical;
+			overflow: visible;
+		}
+
+		#Foot{
+			background-color: #034957;
+			border-radius: 80px 50px;
+			/*position: absolute*/;
+
+		}
+
+		.FinaliseButton {
+			font-family: Georgia;
+			background-color: #034957;
+			color: white;
+			border: none;
+			margin-left: 10px;
+			padding: 5px 10px 5px 10px;
+			text-align: center;
+			font-size: 14px;
+			cursor: pointer;
+			
+			float: right;
+			margin-right: 10px;
+			border-radius: 250px;
+		}
+
+		.FinaliseButton:hover {
+			border: none;
+			/*border-radius: 20px;*/
+			cursor: pointer;
+			background-color: white;
+			color: black;
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			transition-duration: 0.4s;
+		}
+
+
+		/* For mobile phones: */
+		[class*="col-"] {
+			width: 100%;
+		}
+
+		@media only screen and (min-width: 600px) {
+			/* For tablets: */
+		  	.col-s-1 {width: 8.33%;}
+		  	.col-s-2 {width: 16.66%;}
+		  	.col-s-3 {width: 25%;}
+		  	.col-s-4 {width: 33.33%;}
+		  	.col-s-5 {width: 41.66%;}
+		  	.col-s-6 {width: 50%;}
+		  	.col-s-7 {width: 58.33%;}
+		  	.col-s-8 {width: 66.66%;}
+		  	.col-s-9 {width: 75%;}
+		  	.col-s-10 {width: 83.33%;}
+		  	.col-s-11 {width: 91.66%;}
+		  	.col-s-12 {width: 100%;}
+		  }
+
+		@media only screen and (min-width: 768px) {
+			/* For desktop: */
+			.col-1 {width: 8.33%;}
+		  	.col-2 {width: 16.66%;}
+		  	.col-3 {width: 25%;}
+		  	.col-4 {width: 33.33%;}
+		  	.col-5 {width: 41.66%;}
+		  	.col-6 {width: 50%;}
+		  	.col-7 {width: 58.33%;}
+		  	.col-8 {width: 66.66%;}
+		  	.col-9 {width: 75%;}
+		  	.col-10 {width: 83.33%;}
+		  	.col-11 {width: 91.66%;}
+		  	.col-12 {width: 100%;}
+		}
+
+
+		.superscript { position: relative; top: -0.5em; font-size: 80%; }
+		.subscript { position: relative; bottom: -0.5em; font-size: 80%; }
+		#Arial {font-family: Arial;}
+		#ComicSansMS {font-family: Comic Sans MS;}
+		#CourierNew {font-family: Courier New;}
+		#TimesNewRoman {font-family: Times New Roman;}
+		#Veranda {font-family: Veranda;}
+		#Georgia {font-family: Georgia;}
